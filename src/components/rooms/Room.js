@@ -1,6 +1,7 @@
 //Used to establish a connection between the client and the server.
 import io from "socket.io-client";
 import { useState } from "react";
+import Chat from "../chat/Chat";
 
 const socket = io("http://localhost:5000");
 
@@ -32,7 +33,9 @@ function Room() {
           setRoom(e.target.value);
         }}
       />
-      <button onClick={joinRoom}>Join A Room</button>
+          <button onClick={joinRoom}>Join A Room</button>
+          
+          <Chat socket={socket} username={username} room={room} />
     </div>
   );
 }
