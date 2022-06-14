@@ -2,6 +2,7 @@
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "../chat/Chat";
+import "./styles.css"
 
 const socket = io("http://localhost:5000");
 
@@ -17,7 +18,7 @@ function Room() {
   };
 
   return (
-    <div className="App">
+    <div className="joinChatContainer">
       <h3>Join A Chat</h3>
       <input
         type="text"
